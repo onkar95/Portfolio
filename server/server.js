@@ -8,7 +8,7 @@ dotenv.config()
 
 const app = express();
 const corsoption = {
-  origin: ["https://enchanting-ganache-626382.netlify.app/", "http://localhost:3000"],
+  origin: ["https://onkarkotule.netlify.app", "http://localhost:3000"],
   Credential: true
 }
 app.use(cors(corsoption));
