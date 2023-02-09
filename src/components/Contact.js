@@ -54,7 +54,7 @@ export const Contact = () => {
     setButtonText("Sending...");
     console.log(formDetails)
     if (check()) {
-      let response = await fetch("http://localhost:5000/contact", {
+      let response = await fetch("https://portfolio-mail-t2t7.onrender.com/mail/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",

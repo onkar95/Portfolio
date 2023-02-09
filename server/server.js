@@ -7,10 +7,18 @@ dotenv.config()
 // server used to send send emails
 
 const app = express();
-app.use(cors());
+const corsoption = {
+  origin: ["http://localhost:3000"],
+  Credential: true
+}
+app.use(cors(corsoption));
 app.use(express.json());
 
-app.use("/", router);
+app.use("/mail", router);
+
+app.get("/", (req, res, next) => {
+  res.json({ message: "success" })
+});
 app.listen(5000, () => console.log("Server Running"));
 
 // console.log(process.env.EMAIL_USER);
