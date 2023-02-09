@@ -47,10 +47,9 @@
 
 import React from 'react'
 
-const Newsletter = () => {
+export const Newsletter = () => {
   return (
     <div>Newsletter</div>
   )
 }
 
-export default Newsletter

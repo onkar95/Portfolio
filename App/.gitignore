@@ -6,7 +6,7 @@
 /.pnp
 .pnp.js
 */node_modules
-/App/build
+build
 # testing
 /coverage
 
