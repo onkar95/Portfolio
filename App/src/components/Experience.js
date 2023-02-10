@@ -30,24 +30,27 @@ const Experience = () => {
                         <div className="col-12 " >
                             <h4 >Full Stack Developer Intern</h4>
                             <p >
-                                <h6 className='Role'>KnockOnce | Dec 2021 - jan 2022 | 2 Months</h6><br></br>
-                                {/* I have worked on building fullStack E-commerce kind of Application for saloon services. Implemented both FrontEnd in React and Backend in Express/Node
+                                <h6 className='Role'>KnockOnce | Dec 2021 - jan 2022 | 2 Months
+                                    <br></br>
+                                    {/* I have worked on building fullStack E-commerce kind of Application for saloon services. Implemented both FrontEnd in React and Backend in Express/Node
                                         <br></br> */}
-                                Technology Used: Reactjs,MongoDB,
-                                Express,css,
-                                Bootstrap,etc
+                                    Technology Used: Reactjs,MongoDB,
+                                    Express,css,
+                                    Bootstrap,etc
+                                </h6>
                             </p>
                         </div>
 
                         <div className="col-12 ">
                             <h4>React Developer Intern</h4>
                             <p >
-                                <h6 className='Role'>DigitalFlow | Jul 2021 - Oct 2022 | 3 Months</h6>
-                                <br></br>
-                                {/* I have worked on React for implementing Figma design,solving Bugs, Implementing functionality,API Integration, Work Distribution
+                                <h6 className='Role'>DigitalFlow | Jul 2021 - Oct 2022 | 3 Months
+                                    <br></br>
+                                    {/* I have worked on React for implementing Figma design,solving Bugs, Implementing functionality,API Integration, Work Distribution
                                         <br></br> */}
-                                Technology Used: Reactjs,Figma,CSS,BootStrap,
-                                MaterialUI,etc
+                                    Technology Used: Reactjs,Figma,CSS,BootStrap,
+                                    MaterialUI,etc
+                                </h6>
                             </p>
                         </div>
 
