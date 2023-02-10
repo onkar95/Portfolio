@@ -5,6 +5,7 @@ import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -57,10 +58,11 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <span className="tagline">Welcome to my Portfolio</span>
+                  <span className="tagline">ONKAR KOTULE (Developer)</span>
                   <h1>{`Hi! I'm Onkar`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "FrontEnd Developer", "Backend Developer", "" ]'><span className="wrap">{text}</span></span></h1>
                   <p>I am Enthuistic MERN STACK Developer Exploring in this tech for more than 2 years Including 1+ year experience of Internship in the Same. I am open for work and currently looking for Full Time role in MERN stack. Being Full stack developer i am open for Frontend Development as well as Backend Development and also for Freelanceing Projects as Developer,Techinical Content Writting .</p>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+                  <a className="letConnect" href="#connect" onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></a>
+
                 </div>}
             </TrackVisibility>
           </Col>
