@@ -60,7 +60,7 @@ export const Banner = () => {
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <span className="tagline">ONKAR KOTULE (Developer)</span>
                   <h1>{`Hi! I'm Onkar`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "FrontEnd Developer", "Backend Developer", "" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>I am Enthuistic MERN STACK Developer Exploring in this tech for more than 2 years Including 1+ year experience of Internship in the Same. I am open for work and currently looking for Full Time role in MERN stack. Being Full stack developer i am open for Frontend Development as well as Backend Development and also for Freelanceing Projects as Developer,Techinical Content Writting .</p>
+                  <p>I am an enthusiastic Full Stack Developer with 3+ years of experience. I possess a strong command of the <b>MERN stack, React Native, Next.js, etc</b>, and I'm actively expanding my skillset to include <b>Mendix</b>. As a full-stack developer, I am comfortable working on both frontend and backend development.I'm currently seeking full-time opportunities and am also available for freelance projects encompassing development and technical content creation.</p>
                   <a className="letConnect" href="#connect" onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></a>
 
                 </div>}
