@@ -49,7 +49,7 @@ const Experience = () => {
 
                         {
                             experience?.map((val, index) => (
-                                <div className="col-12">
+                                <div >
                                     <h4>{val.title}</h4>
                                     <p >
                                         <h6 className='Role'>{val.info}
