@@ -1,5 +1,8 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
+
+import jiraClone from "../assets/projects/jira-clone.png";
+import splitin from "../assets/projects/splitin.png";
 import projImg1 from "../assets/projects/chatapp.png";
 import projImg2 from "../assets/projects/E-commerce.png";
 import projImg3 from "../assets/projects/Rentbike.png";
@@ -70,6 +73,20 @@ export const Projects = () => {
   ];
   const fullStack = [
     {
+      title: "Jira-clone",
+      description: "Tasks management",
+      imgUrl: jiraClone,
+      link: "https://jira-clone-w193.vercel.app/"
+
+    },
+    {
+      title: "Split-In",
+      description: "Expense tracker",
+      imgUrl: splitin,
+      link: "https://expo.dev/accounts/onkar_9_5/projects/frontend/builds/bd2298d1-1c50-4315-b6d9-e661850214d9"
+
+    },
+    {
       title: "Talke-Tive",
       description: "Chatting Application",
       imgUrl: projImg1,
@@ -111,7 +128,7 @@ export const Projects = () => {
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <h2>Projects</h2>
-                  <p>Majority of my work is based on MERN STACK I have completed many projects like Realtime-ChatAPP, E-Commerce Site,Social-Media,Bike-Rental platform,Blog Site, Various Landing Pages,Third Party API Integration like RapiAPI,etc   .</p>
+                  <p>I have completed many projects like Jira-clone,SplitIn, Realtime-ChatAPP, E-Commerce Site,Social-Media,Bike-Rental platform,Blog Site, Various Landing Pages,Third Party API Integration like RapiAPI,etc   .</p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                       <Nav.Item>
