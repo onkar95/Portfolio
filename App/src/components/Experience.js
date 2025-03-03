@@ -4,7 +4,39 @@ import colorSharp from "../assets/img/color-sharp.png"
 
 const Experience = () => {
 
+    // {
+    //     title: "Full Time Software Developer Intern",
+    //     info: "",
+    //     desc: ""
+    // },
 
+    const experience = [
+        {
+            title: "Associate consultant",
+            info: "Capgemini | July 2023 - current",
+            desc: "Tech.: Mendix, Agile developement, Reactjs, Javascript, Azure cloud,etc"
+        },
+        {
+            title: "Backend Developer",
+            info: "CODEROOFS | FEB 2023 - MARCH 2023 | 2 months",
+            desc: "Tech: Express, Postman, Nodejs, Embedded JavaScript, MongoDB, Reactjs."
+        },
+        {
+            title: "Software Developer",
+            info: "BITCS | Jan 2022 - Oct 2022 | 10 Months",
+            desc: " Technology Used: Reactjs,Nextjs,Scss,Typescript,Gitlab,Figma,etc"
+        },
+        {
+            title: "Full Stack Developer",
+            info: "KnockOnce | Dec 2021 - jan 2022 | 2 Months",
+            desc: "Technology Used: Reactjs,MongoDB,Express,css,Bootstrap,etc"
+        },
+        {
+            title: "React Developer",
+            info: "DigitalFlow | Jul 2021 - Oct 2022 | 4 Months",
+            desc: "Technology Used: Reactjs,Figma,CSS,BootStrap,MaterialUI,etc"
+        },
+    ]
     return (
         <section className=" skill experience" id="experience">
             <div className="container">
@@ -14,49 +46,22 @@ const Experience = () => {
 
                     <h2 className='my-5 mt-0'> Experience</h2>
                     <div className='Exp_list'>
-                        <div className="col-12">
-                            <h4>Full Time Software Developer Intern</h4>
-                            <p >
-                                <h6 className='Role'>BITCS | Jan 2022 - Oct 2022 | 10 Months
-                                    <br></br>
-                                    Technology Used: Reactjs,Nextjs,
-                                    Scss,Typescript,Gitlab,Figma,etc
-                                </h6>
-                            </p>
-                        </div>
-                        {/* <br></br>
-                                        I have worked on React and Nextjs for implementing Figma design,solving Bugs, Implementing functionality */}
-                        {/* <br></br> */}
-                        <div className="col-12 " >
-                            <h4 >Full Stack Developer Intern</h4>
-                            <p >
-                                <h6 className='Role'>KnockOnce | Dec 2021 - jan 2022 | 2 Months
-                                    <br></br>
-                                    {/* I have worked on building fullStack E-commerce kind of Application for saloon services. Implemented both FrontEnd in React and Backend in Express/Node
-                                        <br></br> */}
-                                    Technology Used: Reactjs,MongoDB,
-                                    Express,css,
-                                    Bootstrap,etc
-                                </h6>
-                            </p>
-                        </div>
 
-                        <div className="col-12 ">
-                            <h4>React Developer Intern</h4>
-                            <p >
-                                <h6 className='Role'>DigitalFlow | Jul 2021 - Oct 2022 | 3 Months
-                                    <br></br>
-                                    {/* I have worked on React for implementing Figma design,solving Bugs, Implementing functionality,API Integration, Work Distribution
-                                        <br></br> */}
-                                    Technology Used: Reactjs,Figma,CSS,BootStrap,
-                                    MaterialUI,etc
-                                </h6>
-                            </p>
-                        </div>
-
+                        {
+                            experience?.map((val, index) => (
+                                <div className="col-12">
+                                    <h4>{val.title}</h4>
+                                    <p >
+                                        <h6 className='Role'>{val.info}
+                                            <br></br>
+                                            {val.desc}
+                                        </h6>
+                                    </p>
+                                </div>
+                            ))
+                        }
 
                     </div>
-                    {/* </div> */}
                 </div>
             </div>
             <img className="background-image-left" src={colorSharp} alt="backimgmage" />
