@@ -1,0 +1,616 @@
+provided is the html file please refactor it and close of dropdown when clicked out side is not working also provide css attached for reference
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Angular Blog Page</title>
+    <link rel="stylesheet" href="index.css" />
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const serviceLink = document.getElementById("Service");
+            const dropdownContainer = document.querySelector(".dropdown-container");
+            const mainContent = document.querySelector(".main-container");
+            const closeBtn = document.getElementById("dropdownClose");
+
+            function toggleDropdown(show) {
+                dropdownContainer.classList.toggle("show", show);
+                mainContent.classList.toggle("blur", show);
+                document.body.classList.toggle("dropdown-active", show);
+            }
+
+            // Toggle on clicking "Services"
+            serviceLink.addEventListener("click", function (event) {
+                event.preventDefault();
+                toggleDropdown(true);
+            });
+
+            // Close when clicking outside the dropdown
+            document.addEventListener("click", function (event) {
+                const isInside = dropdownContainer.contains(event.target) || serviceLink.contains(event.target);
+                if (!isInside) {
+                    toggleDropdown(false);
+                }
+            });
+
+            // Close on clicking close button
+            closeBtn?.addEventListener("click", () => toggleDropdown(false));
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">SECL <span>group</span></div>
+        <nav class="nav-links">
+            <a id="Service" href="#">Services</a>
+            <a href="#">Solutions</a>
+            <a href="#">Industries</a>
+            <a href="#">Cases</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a class="request-btn" href="#">Request</a>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <aside class="left-sidebar">
+            <h3>GET A QUOTE</h3>
+            <form>
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email" />
+                <input type="text" placeholder="Phone" />
+                <textarea placeholder="Message"></textarea>
+                <button class="submit-button">SUBMIT</button>
+            </form>
+        </aside>
+
+        <section class="content">
+            <div class="breadcrumbs">Home / Blog / 10 Best Examples of Websites and Apps Built with Angular</div>
+
+            <div class="author-info">
+                <img src="https://via.placeholder.com/40" alt="Author" class="author-image" />
+                <div>
+                    <strong class="author-name">Mykyta Semenov</strong><br />
+                    <span class="author-title">CEO, SECL Group</span>
+                </div>
+            </div>
+
+            <h1 class="article-title">10 Best Examples of Websites and Apps Built with Angular</h1>
+            <p class="date">January 13, 2023</p>
+
+            <ul class="internal-links">
+                <li><a href="#">What is Angular?</a></li>
+                <li><a href="#">10 Popular Websites made with Angular</a></li>
+                <li><a href="#">What Are the Advantages of Angular?</a></li>
+                <li><a href="#">When To Choose Angular For Your Project?</a></li>
+                <li><a href="#">Conclusion</a></li>
+            </ul>
+
+            <p>Angular is often on the desktop when discussing suitable tooling for new projects...</p>
+            <p>In this article we will showcase 10 famous websites built with Angular...</p>
+            <p class="text-sm leading-relaxed text-gray-700 article-paragraph">
+                Please do not hesitate to <a href="#" class="text-accent underline">contact our specialists</a> for
+                expert support...
+            </p>
+
+            <div class="tags-container">
+                <span class="tag black text-white small rounded">Frameworks</span>
+                <span class="tag border small rounded">Programming</span>
+                <span class="tag border small rounded">Standards</span>
+                <span class="tag border small rounded">Startups</span>
+            </div>
+
+            <section class="author-section">
+                <h2 class="section-title">Author</h2>
+                <div class="author-details">
+                    <img src="https://via.placeholder.com/60" class="author-image rounded-full small-width small-height"
+                        alt="Author Image" />
+                    <div>
+                        <h3 class="author-name base semibold">Mykyta Semenov</h3>
+                        <p class="author-title small gray-600">CEO, SECL Group</p>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <p class="small"><strong>Phone:</strong> <span class="text-primary semibold">+1 (929)
+                            214-12-70</span></p>
+                    <p class="small"><strong>Email:</strong> <span
+                            class="text-primary semibold">info@seclgroup.com</span></p>
+                </div>
+
+                <p class="small gray-700 mt-4 leading-relaxed">
+                    The CEO of a software development company called SECL Group...
+                </p>
+
+                <div class="social-icons">
+                    <a href="#"><img src="https://www.svgrepo.com/show/452196/facebook-1.svg" class="icon"
+                            alt="FB" /></a>
+                    <a href="#"><img src="https://www.svgrepo.com/show/448234/linkedin.svg" class="icon"
+                            alt="LinkedIn" /></a>
+                    <a href="#"><img src="https://www.svgrepo.com/show/448275/github.svg" class="icon"
+                            alt="GitHub" /></a>
+                </div>
+            </section>
+        </section>
+
+        <aside class="right-sidebar">
+            <h4>Relevant to:</h4>
+            <ul class="relevant-links">
+                <li><a href="#">Dedicated Development Team</a></li>
+                <li><a href="#">Back-End Development</a></li>
+                <li><a href="#">JavaScript Development Services</a></li>
+                <li><a href="#">Angular Development Services</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <div class="dropdown-container">
+        <div class="dropdown">
+            <h1>Select Services</h1>
+            <button id="dropdownClose" class="close-button">✕</button>
+            <div class="services-container">
+                <div class="tabs">
+                    <button class="active">By purpose</button>
+                    <button>By work type</button>
+                    <button>By technology</button>
+                </div>
+                <div class="services-grid">
+                    <div class="By-purpose">
+                        <div class="service" id="ai-integration">
+                            <span>🧠</span><span>AI Integration Services</span>
+                        </div>
+                        <div class="service" id="software-re-engineering">
+                            <span>🔄</span><span>Software Re-Engineering</span>
+                        </div>
+                        <div class="service" id="cto-service">
+                            <span>🧑‍💼</span><span>CTO as a Service for Start-Ups</span>
+                        </div>
+                        <div class="service" id="software-audit">
+                            <span>🔍</span><span>Software Audit</span>
+                        </div>
+                    </div>
+                    <div class="By-worktype">
+                        <div class="service" id="software-architecture">
+                            <span>🏗️</span><span>Software Architecture</span>
+                        </div>
+                        <div class="service" id="api-integration">
+                            <span>🔗</span><span>API Integration Services</span>
+                        </div>
+                        <div class="service" id="application-modernization">
+                            <span>⚙️</span><span>Application Modernization Services</span>
+                        </div>
+                        <div class="service" id="offshore-development">
+                            <span>🌍</span><span>Offshore Development Services</span>
+                        </div>
+                    </div>
+                    <div class="By-technology">
+                        <div class="service" id="high-load-systems">
+                            <span>🚀</span><span>High Load Systems</span>
+                        </div>
+                        <div class="service" id="data-migration">
+                            <span>💾</span><span>Data Migration</span>
+                        </div>
+                        <div class="service" id="product-discovery">
+                            <span>🔍</span><span>Product Discovery Phase</span>
+                        </div>
+                        <div class="service" id="software-product-development">
+                            <span>🛠️</span><span>Software Product Development</span>
+                        </div>
+                        <div class="service" id="enterprise-software">
+                            <span>🏢</span><span>Enterprise Software Development</span>
+                        </div>
+                        <div class="service" id="dedicated-team">
+                            <span>👨‍💻</span><span>Dedicated Development Team</span>
+                        </div>
+                        <div class="service" id="custom-mapping">
+                            <span>🗺️</span><span>Custom Mapping Solutions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <section class="request-section">
+            <h2 class="section-title large bold mb-4">Request</h2>
+            <p class="section-description small medium-base gray-700 mb-10">Contact us and we will get back to you soon
+            </p>
+            <form class="request-form">
+                <input type="text" placeholder="Name" class="form-input" />
+                <input type="email" placeholder="Email" class="form-input" />
+                <textarea placeholder="Message" class="form-textarea"></textarea>
+                <button
+                    class="submit-button primary gradient text-white px-6 py-2 rounded-full semibold shadow hover-brightness inline-flex items-center gap-2">
+                    SUBMIT <span>→</span>
+                </button>
+            </form>
+        </section>
+        <p class="footer-bottom small gray-500 text-center mt-10">© 2025 SECL Group. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
+
+/* styles.css */
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll due to blur */
+}
+
+body.dropdown-active {
+    overflow: hidden; /* Prevent scrolling when dropdown is active */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.logo span {
+    font-weight: normal;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.nav-links .request-btn {
+    border: 1px solid #d73387;
+    padding: 5px 12px;
+    border-radius: 20px;
+    color: #d73387;
+    font-weight: bold;
+}
+
+/* Main layout */
+.main-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 30px;
+    transition: filter 0.3s ease;
+}
+
+.blur {
+    filter: blur(2px); /* Or your preferred style */
+  }
+.main-container.blur {
+    filter: blur(5px);
+}
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+/* Left Sidebar */
+.left-sidebar {
+    flex: 1;
+    max-width: 200px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.left-sidebar h3 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.left-sidebar input,
+.left-sidebar textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.left-sidebar button {
+    background: linear-gradient(to right, #d73387, #a24efc);
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Center Content */
+.content {
+    flex: 2;
+}
+
+.breadcrumbs {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.author-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.content h1 {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.date {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.internal-links {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.internal-links li {
+    margin: 6px 0;
+}
+
+.internal-links a {
+    color: #d73387;
+    text-decoration: none;
+}
+
+/* Right Sidebar */
+.right-sidebar {
+    flex: 1;
+    max-width: 200px;
+}
+
+.right-sidebar h4 {
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.right-sidebar ul {
+    list-style: none;
+}
+
+.right-sidebar li {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.right-sidebar a {
+    color: #d73387;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Dropdown Container */
+.dropdown-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 110; /* Above navbar and content */
+}
+
+.dropdown-container.show {
+    display: flex;
+}
+
+.dropdown {
+    background-color: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    width: 90%; /* Adjust width as needed */
+    max-width: 768px;
+    position: relative;
+}
+
+.dropdown h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Services Container Styles within Dropdown */
+.services-container {
+    width: 100%;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+}
+
+.tabs button {
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: color 0.2s;
+}
+
+.tabs button:hover {
+    color: #000;
+}
+
+.tabs .active {
+    color: #EC4899;
+    border-bottom: 2px solid #EC4899;
+    padding-bottom: 0.5rem;
+}
+
+/* Services Grid Styles within Dropdown */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+    text-align: center;
+}
+
+.service span:first-child {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.service:hover {
+    background-color: #f1f1f1;
+}
+
+/* Footer */
+.footer {
+    background-color: #e8eeff;
+    color: #1b1b1b;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.request-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.request-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-input,
+.form-textarea {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background-color: transparent;
+    outline: none;
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    background-image: linear-gradient(to right, #ec7aba, #e5a8f2);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: filter 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.submit-button:hover {
+    filter: brightness(1.1);
+}
+
+.map-container {
+    position: relative;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.map-image {
+    width: 100%;
+    display: block;
+    object-fit: contain;
+}
+
